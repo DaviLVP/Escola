@@ -1,5 +1,6 @@
 package com.davi.escola.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Aluno {
     Long id;
     String nome;
     String turma;
+    @JsonFormat (pattern= "dd-MM-yyyy")
     LocalDate dataMatricula;
     @ManyToMany(mappedBy = "alunos")
     List<Disciplina> disciplinas;
